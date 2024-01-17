@@ -68,6 +68,8 @@ class Net(nn.Module):
         self.layer4 = make_layers(256,512,2,True)
         # 256 8 4
         self.avgpool = nn.AvgPool2d((8,4),1)
+        # 车辆模型换成下面这个：
+        # self.avgpool = nn.AvgPool2d((4,8),1) 
         # 256 1 1 
         self.reid = reid
         self.classifier = nn.Sequential(
